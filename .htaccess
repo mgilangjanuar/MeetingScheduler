@@ -1,0 +1,14 @@
+php_value memory_limit 256M
+php_value max_execution_time 8640000
+php_value post_max_size 256M
+php_value upload_max_filesize 256M
+
+# prevent directory listings
+Options -Indexes
+IndexIgnore */*
+ 
+# follow symbolic links
+Options FollowSymlinks
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)?$ web/$1

@@ -1,0 +1,320 @@
+html,
+body {
+    height: 100%;
+    font-family: "RobotoDraft";
+    font-weight: 100;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 100;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/ "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/ "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.md-form {
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.md-form form {
+    padding: 25px;
+}
+
+.login-form, .sm-form {
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+.login-form form, .sm-form form {
+    padding: 25px;
+}
+
+
+
+/* My Styles */
+
+.main-title {
+    text-align: center;
+}
+
+hr.blue {
+    width: 130px;
+    height: 5px;
+    margin-bottom: 40px;
+    background-color: #3f51b5;
+}
+
+hr.orange {
+    width: 130px;
+    height: 5px;
+    margin-bottom: 40px;
+    background-color: #ff5722;
+}
+
+hr.teal {
+    width: 130px;
+    height: 5px;
+    margin-bottom: 40px;
+    background-color: #009688;
+}
+
+.table.detail-view tr th,
+.table.detail-view tr td {
+    vertical-align: middle;
+}
+
+.filters .form-group, .mini.form-group {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.form-group label.control-label {
+    color: #666;
+    font-size: 14px;
+}
+
+legend {
+    margin-top: 50px;
+}
+
+.order-bill .btn-checkout {
+    padding-top: 66px;
+}
+
+.btn {
+    margin: 3px 1px;
+}
+
+#accordion .panel-heading {
+    cursor: pointer;
+}
+
+.activity-log {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.list-group .list-group-item .list-group-item-heading {
+    font-size: 16px;
+}
+
+.form-group .help-block {
+    display: inherit;
+}
+
+.strikeout {
+    position: relative;
+    z-index: 1;
+    color: #bbb;
+}
+
+.strikeout:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
+.strikeout span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.truncate-inline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-panel, .link-panel:hover, .link-panel:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+.panel-description {
+    height: 60px;
+    overflow: hidden;
+}
+
+.document-list {
+    overflow-x:auto;
+    width:100%;
+    text-align: center;
+    min-height: calc(100vh - 410px);
+}
+
+.list-inline {
+    white-space:nowrap;
+    top: 0;
+}
+
+.document-item {
+    padding:0;
+    text-align: center;
+    width: 200px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.navbar-nav > li > a {
+    margin-bottom: 17px;
+}
+
+.theme-blue .nav>li>a {
+    color: #23527c;
+}
+
+.theme-blue .nav>li.active>a {
+    color: #fff;
+}
+
+.has-error .form-control:focus {
+    border-color: #fff;
+    box-shadow: none;
+}
+
+.btn-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.card.blur > .panel-body {
+    opacity: 0.2;
+}
+
+.card-overlay {
+    display: none;
+}
+
+.card-overlay.show {
+    position: absolute;
+    left: 50%;
+    top: 60px;
+}
+
+.card-overlay.show .card-button-action {
+    position: relative;
+    left: -50%;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+    background-color: #337ab7;
+}
+
+.img-responsive.img-center {
+    margin: 0 auto;
+}
+
+.bg-light-blue a.not-style {
+    color: #fff;
+    text-decoration: none;
+}
+
+.redactor-toolbar {
+    z-index: 9;
+}

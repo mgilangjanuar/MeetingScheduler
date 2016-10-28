@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use dektrium\user\models\Profile;
 use Yii;
 
 /**

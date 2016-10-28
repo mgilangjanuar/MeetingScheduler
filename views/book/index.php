@@ -10,9 +10,8 @@ $this->title = $model->name;
         <div class="card">
             <div class="body">
                 <h1 class="main-title"><?= $this->title ?></h1>
-                <br />
                 <?= $model->description ?>
-                <p><i class="fa fa-user"></i> Created by <?= Html::a('@' . $model->user->username, ['/u/' . $model->user->username]) ?></p>
+                <p><i class="fa fa-user"></i> <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?></p>
             </div>
         </div>
     </div>

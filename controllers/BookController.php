@@ -49,9 +49,9 @@ class BookController extends Controller
         ];
     }
 
-    public function actionIndex($uname, $id = null)
+    public function actionIndex($slug)
     {
-        $event = $id ? $this->findEvent($id) : $this->findDefaultEvent($uname);
+        $event = $this->findEvent($slug);
         return $this->render('index', [
             'model' => $event
         ]);

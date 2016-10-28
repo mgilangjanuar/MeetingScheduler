@@ -30,8 +30,6 @@ use vova07\imperavi\Widget as Imperavi;
                 'buttons' => ['bold', 'italic', 'deleted', 'orderedlist', 'link']
             ]
         ]) ?>
-
-        <?= $form->field($model, 'is_default', ['checkboxTemplate' => '<div class="checkbox">{input}{beginLabel}{labelTitle}{endLabel}</div>'])->checkbox() ?>
         
         <?= Html::submitButton(($model->isNewRecord ? 'SAVE' : 'UPDATE'), ['class' => 'btn btn-primary btn-block']) ?>
 

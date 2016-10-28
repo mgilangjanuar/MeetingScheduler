@@ -15,7 +15,7 @@ $this->title = $model->name;
                 <?= $model->description ?>
 
                 <p class="truncate">
-                    <i class="fa fa-link"></i> <?= Html::a(Url::to(['/!/' . Yii::$app->user->identity->username . ($model->is_default ? '' : '/' . $model->id)], true), ['/!/' . Yii::$app->user->identity->username . ($model->is_default ? '' : '/' . $model->id)]) ?>
+                    <i class="fa fa-link"></i> <?= Html::a(Url::to(['/!/' . $model->slug], true), ['/!/' . $model->slug]) ?>
                 </p>
 
             </div>

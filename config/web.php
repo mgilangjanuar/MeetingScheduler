@@ -59,8 +59,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '!/<uname>/<id>' => 'book/index',
-                '!/<uname>' => 'book/index',
+                '!/<slug>' => 'book/index',
                 'u/<id>' => 'profile/view'
             ]
         ],

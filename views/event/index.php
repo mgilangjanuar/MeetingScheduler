@@ -12,11 +12,14 @@ $this->title = 'Events';
     <br /><br />
 
     <div class="row">
+        <?php if (!$models): ?>
+            <p class="text-center not-set">you haven't event yet</p>
+        <?php endif ?>
         <?php foreach ($models as $model): ?>
             <div class="col-sm-6 col-md-4">
                 <div class="card">
                     <div class="panel-body">
-                        <h4 class="truncate"><?= $model->is_default ? '<i class="fa fa-thumb-tack text-primary"></i>' : '' ?> <?= $model->name ?></h4>
+                        <h4 class="truncate"><?= $model->name ?></h4>
                         <div class="panel-description">
                             <?= $model->description ?>
                         </div>

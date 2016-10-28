@@ -12,7 +12,6 @@ use yii\behaviors\TimestampBehavior;
  * @property string $name
  * @property string $description
  * @property string $slug
- * @property integer $is_default
  * @property integer $can_book_before
  * @property integer $created_at
  * @property integer $updated_at
@@ -51,8 +50,9 @@ class Event extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'description', 'is_default', 'slug'], 'required'],
+            [['name', 'description', 'slug'], 'required'],
             [['description', 'slug'], 'string'],
+            [['slug'], 'unique'],
             [['created_at', 'updated_at', 'user_id', 'can_book_before'], 'integer'],
             [['name'], 'string', 'max' => 255],
             // [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],

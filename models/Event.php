@@ -56,6 +56,13 @@ class Event extends \yii\db\ActiveRecord
             [['created_at', 'updated_at', 'user_id', 'can_book_before'], 'integer'],
             [['name'], 'string', 'max' => 255],
             // [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
+            [['slug'], 'match', 'pattern' => "/^([a-z0-9\-\_])+$/", 'not' => false, 'message' => 'Must be lowercase and not space or symbol.'],
+            [['name', 'slug'], function ($attribute)
+            {
+                if (($this->$attribute) != (\yii\helpers\Html::encode($this->$attribute))) {
+                    $this->addError($attribute, 'This field contained forbidden character.');
+                }
+            }]
         ];
     }
 
@@ -69,7 +76,6 @@ class Event extends \yii\db\ActiveRecord
             'name' => 'Name',
             'description' => 'Description',
             'slug' => 'Slug',
-            'is_default' => 'Is Default',
             'can_book_before' => 'Can Book Before (in minutes)',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
@@ -100,7 +106,6 @@ class Event extends \yii\db\ActiveRecord
         if (parent::beforeSave($insert)) {
             $this->setUserId();
             $this->setBookBefore();
-            $this->setDefault();
             return true;
         }
         return false;
@@ -168,16 +173,5 @@ class Event extends \yii\db\ActiveRecord
     public function getUpdatedAtPretty()
     {
         return date('d M Y H:i', $this->updated_at);
-    }
-
-    public function setDefault()
-    {
-        if ($this->is_default) {
-            foreach (Event::find()->where(['user_id' => Yii::$app->user->id, 'is_default' => 1])->all() as $model) {
-                $model->is_default = 0;
-                $model->save();
-            }
-            $this->is_default = 1;
-        }
     }
 }

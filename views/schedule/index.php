@@ -17,9 +17,12 @@ $this->title = 'Schedules';
             <?php endif ?>
             <?php foreach ($models as $model): ?>
                 <div class="card">
-                    <div class="header text-center bg-light-blue">
+                    <div class="header text-center bg-deep-orange">
                         <h2 class="truncate">
-                            <?= Html::a($model->event->name, ['/!/' . $model->event->user->username . '/' . $model->event->slug], ['class' => 'not-style']) ?>
+                            <?= Html::a($model->event->name, ['/!/' . $model->event->slug], ['class' => 'not-style']) ?>
+                            <small>
+                                <i class="fa fa-user"></i> meet with <?= Html::a($model->event->user->profile->name ? $model->event->user->profile->name : $model->event->user->username, ['/u/' . $model->event->user->username]) ?>
+                            </small>
                         </h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
@@ -28,7 +31,7 @@ $this->title = 'Schedules';
                                 </a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <?= Html::a('<i class="fa fa-refresh"></i> Reschedule', ['/!/' . $model->event->user->username . '/' . $model->event->slug]) ?>
+                                        <?= Html::a('<i class="fa fa-refresh"></i> Reschedule', ['/!/' . $model->event->slug]) ?>
                                     </li>
                                     <li>
                                         <?= Html::a('<i class="fa fa-trash"></i> Delete Schedule', ['/book/delete', 'id' => $model->id], [

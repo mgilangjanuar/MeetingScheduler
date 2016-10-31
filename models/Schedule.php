@@ -38,6 +38,12 @@ class Schedule extends \yii\db\ActiveRecord
             [['note'], 'string'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['event_id'], 'exist', 'skipOnError' => true, 'targetClass' => Event::className(), 'targetAttribute' => ['event_id' => 'id']],
+            [['startedAtPretty', 'endedAtPretty'], function ($attribute)
+            {
+                if (($this->$attribute) != (\yii\helpers\Html::encode($this->$attribute))) {
+                    $this->addError($attribute, 'This field contained forbidden character.');
+                }
+            }]
         ];
     }
 

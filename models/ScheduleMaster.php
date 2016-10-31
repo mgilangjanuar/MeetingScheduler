@@ -25,6 +25,13 @@ class ScheduleMaster extends Model
     {
         return [
             [['startedAtPretty', 'endedAtPretty', 'duration', 'event'], 'required'],
+            [['duration'], 'integer'],
+            [['startedAtPretty', 'endedAtPretty'], function ($attribute)
+            {
+                if (($this->$attribute) != (\yii\helpers\Html::encode($this->$attribute))) {
+                    $this->addError($attribute, 'This field contained forbidden character.');
+                }
+            }]
         ];
     }
 

@@ -19,7 +19,7 @@ use vova07\imperavi\Widget as Imperavi;
                 <?= $form->field($model, 'name', ['inputTemplate' => '<div class="form-line">{input}</div>']) ?>
             </div>
             <div class="col-sm-5">
-                <?= $form->field($model, 'can_book_before', ['inputOptions' => ['value' => $model->isNewRecord ? 30 : $model->canBookPretty], 'inputTemplate' => '<div class="form-line">{input}</div>']) ?>
+                <?= $form->field($model, 'can_book_before', ['inputOptions' => ['value' => $model->isNewRecord ? 30 : ($model->canBookPretty)], 'inputTemplate' => '<div class="form-line">{input}</div>']) ?>
             </div>
         </div>
 

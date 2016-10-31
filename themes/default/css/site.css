@@ -318,3 +318,17 @@ legend {
 .redactor-toolbar {
     z-index: 9;
 }
+
+.card .header h2 a {
+    color: #fff;
+}
+
+.card .header h2 {
+    font-size: 22px;
+}
+
+.card .header h2 small a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: normal;
+}

@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'https://fonts.googleapis.com/icon?family=Material+Icons',
         'bootstrap/dist/css/bootstrap.min.css',
         'adminbsb-materialdesign/plugins/node-waves/waves.css',
+        'adminbsb-materialdesign/plugins/animate-css/animate.css',
         'adminbsb-materialdesign/css/style.css',
         'adminbsb-materialdesign/css/themes/theme-blue.min.css',
         'css/site.css',

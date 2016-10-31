@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\Event;
+use app\models\Schedule;
+use yii\db\Query;
 
 class SiteController extends Controller
 {
@@ -35,7 +37,15 @@ class SiteController extends Controller
             return $this->render('index');
         } else {
             return $this->render('dashboard', [
-                'models' => Event::find()->where(['user_id' => Yii::$app->user->id])->all()
+                'models' => Schedule::find()
+                    ->where(['>', 'ended_at', time()])
+                    ->andWhere(['user_id' => Yii::$app->user->id])
+                    ->orWhere(['event_id' => 
+                        (new Query)->select('id')->from('event')->where(['user_id' => Yii::$app->user->id])
+                    ])
+                    ->andWhere(['is not', 'user_id', null])
+                    ->orderBy('started_at')
+                    ->all(),
             ]);
         }
     }

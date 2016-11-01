@@ -7,8 +7,9 @@ $this->title = date('H:i', $model->started_at) . ' - ' . date('H:i', $model->end
 ?>
 
 <div class="schedule-view">
-    <h1 class="main-title"><?= $this->title ?></h1>
-    <br /><br />
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">

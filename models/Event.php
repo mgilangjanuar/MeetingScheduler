@@ -60,6 +60,7 @@ class Event extends \yii\db\ActiveRecord
             [['name', 'slug'], function ($attribute)
             {
                 if (($this->$attribute) != (\yii\helpers\Html::encode($this->$attribute))) {
+                    $this->setBookBefore();
                     $this->addError($attribute, 'This field contained forbidden character.');
                 }
             }]

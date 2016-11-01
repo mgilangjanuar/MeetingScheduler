@@ -7,8 +7,9 @@ $this->title = 'My Schedule at ' . $model->event->name;
 ?>
 
 <div class="book-view">
-    <h1 class="main-title"><?= Html::encode($this->title) ?></h1>
-    <br /><br />
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">

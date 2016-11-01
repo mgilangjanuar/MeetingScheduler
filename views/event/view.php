@@ -7,17 +7,20 @@ $this->title = $model->name;
 
 <div class="event-index">
 
-    <div class="text-center">
-        <div class="card">
-            <div class="body">
-                <h1 class="main-title"><?= $this->title ?></h1>
-                <br />
-                <?= $model->description ?>
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
-                <p class="truncate">
-                    <i class="fa fa-link"></i> <?= Html::a(Url::to(['/!/' . $model->slug], true), ['/!/' . $model->slug]) ?>
-                </p>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 text-center">
+            <div class="card">
+                <div class="body">
+                    <?= $model->description ?>
+                    <p class="truncate">
+                        <i class="fa fa-link"></i> <?= Html::a(Url::to(['/!/' . $model->slug], true), ['/!/' . $model->slug]) ?>
+                    </p>
 
+                </div>
             </div>
         </div>
     </div>

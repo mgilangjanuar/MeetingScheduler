@@ -7,15 +7,14 @@ $this->title = $model->username;
 ?>
 
 <div class="profile-view">
-    <div class="card">
-        <div class="body text-center">
-            <?= Html::img($model->profile->getAvatarUrl(150), [
-                'class' => 'img-circle img-responsive img-center',
-            ]) ?>
 
-            <h2><?= $model->profile->name ? Html::encode($model->profile->name) : Html::encode($model->username) ?></h2>
-            <h4 class="text-muted">@<?= Html::encode($model->username) ?></h4>
-        </div>
+    <div class="well container-main-title main-title text-center">
+        <?= Html::img($model->profile->getAvatarUrl(150), [
+            'class' => 'img-circle img-responsive img-center',
+        ]) ?>
+
+        <h2><?= $model->profile->name ? Html::encode($model->profile->name) : Html::encode($model->username) ?></h2>
+        <p><?= Html::encode($model->email) ?></p>
     </div>
 
     <div class="row">

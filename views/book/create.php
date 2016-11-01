@@ -7,7 +7,9 @@ $this->title = date('H:i', $model->started_at) . ' - ' . date('H:i', $model->end
 ?>
 
 <div class="book-create">
-    <h1 class="main-title"><?= $this->title ?></h1> 
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
     <div class="form">
         <?= $this->render('_partial/form', [

@@ -6,8 +6,13 @@ $this->title = 'Dashboard';
 ?>
 
 <div class="site-dashboard">
-    <h1 class="main-title"><?= $this->title ?></h1>
-    <br /><br />
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
+
+    <?php if (! $models): ?>
+        <p class="text-center not-set">you haven't schedule yet, hooray!</p>
+    <?php endif ?>
 
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
@@ -15,7 +20,7 @@ $this->title = 'Dashboard';
                 <div class="card">
                     <div class="header text-center bg-<?= $model->user_id == Yii::$app->user->id ? 'deep-orange' : 'teal' ?>">
                         <h2 class="truncate">
-                            <?= Html::a($model->event->name, ['/!/' . $model->event->user->username . '/' . $model->event->slug], ['class' => 'not-style']) ?>
+                            <?= Html::a($model->event->name, ['/!/' . $model->event->slug], ['class' => 'not-style']) ?>
                             <small>
                                 <?php if ($model->user_id != Yii::$app->user->id): ?>
                                     <i class="fa fa-user"></i> meet with <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?>
@@ -24,26 +29,6 @@ $this->title = 'Dashboard';
                                 <?php endif ?>
                             </small>
                         </h2>
-                        <ul class="header-dropdown m-r--5">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    <i class="material-icons">more_vert</i>
-                                </a>
-                                <ul class="dropdown-menu pull-right">
-                                    <li>
-                                        <?= Html::a('<i class="fa fa-refresh"></i> Reschedule', ['/!/' . $model->event->user->username . '/' . $model->event->slug]) ?>
-                                    </li>
-                                    <li>
-                                        <?= Html::a('<i class="fa fa-trash"></i> Delete Schedule', ['/book/delete', 'id' => $model->id], [
-                                            'data' => [
-                                                'method' => 'post',
-                                                'confirm' => 'Are you sure?',
-                                            ]
-                                        ]) ?>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                     <div class="body text-center">
                         <h2>

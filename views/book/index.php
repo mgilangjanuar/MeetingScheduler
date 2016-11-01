@@ -6,17 +6,21 @@ $this->title = $model->name;
 ?>
 
 <div class="book-index">
-    <div class="text-center">
-        <div class="card">
-            <div class="body">
-                <h1 class="main-title"><?= $this->title ?></h1>
-                <?= $model->description ?>
-                <p><i class="fa fa-user"></i> <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?></p>
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="card text-center">
+                <div class="body">
+                    <?= $model->description ?>
+                    <small>Managed by <i class="fa fa-user"></i> <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?></small>
+                </div>
             </div>
         </div>
     </div>
 
-    <br />
     <?php if ($model->getScheduleGroups(true, true)): ?>
         <div class="schedule">
             

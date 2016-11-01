@@ -2,9 +2,10 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Home';
+$this->title = 'Homepage';
 ?>
 <div class="site-index">
 
+    
     
 </div>

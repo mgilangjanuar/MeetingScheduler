@@ -22,7 +22,9 @@ $this->title = Yii::t('user', 'Request Confirmation Message');
 <div class="container-fluid">
     <div class="row">
     
-        <h1 class="main-title"><?= $this->title ?></h1> 
+        <div class="well container-main-title">
+            <h1 class="main-title"><?= $this->title ?></h1>
+        </div>
 
         <div class="login-form">
             <div class="card">

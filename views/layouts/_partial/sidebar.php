@@ -64,10 +64,10 @@ $user = Yii::$app->user->identity;
         </div>
         <div class="legal">
             <div class="copyright">
-                &copy; <?= date('Y') ?> <a href="#"><?= Yii::$app->name ?></a>.
+                Copyright &copy; <?= Html::a(Yii::$app->name, Yii::$app->homeUrl) ?> <?= date('Y') ?>. All rights reserved.
             </div>
             <div class="version">
-                
+                Fork on <a href="https://github.com/mgilangjanuar/MeetingScheduler"><i class="fa fa-github"></i> GitHub</a>
             </div>
         </div>
     </aside>

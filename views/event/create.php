@@ -7,7 +7,9 @@ $this->title = 'Create Event';
 ?>
 
 <div class="event-create">
-    <h1 class="main-title"><?= $this->title ?></h1>
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
     <div class="form">
         <?= $this->render('_partial/form', [

@@ -8,8 +8,9 @@ $this->title = 'Events';
 ?>
 <div class="event-index">
     
-    <h1 class="main-title"><?= $this->title ?></h1>
-    <br /><br />
+    <div class="well container-main-title">
+        <h1 class="main-title"><?= $this->title ?></h1>
+    </div>
 
     <div class="row">
         <?php if (!$models): ?>
@@ -18,8 +19,10 @@ $this->title = 'Events';
         <?php foreach ($models as $model): ?>
             <div class="col-sm-6 col-md-4">
                 <div class="card">
-                    <div class="panel-body">
-                        <h4 class="truncate"><?= $model->name ?></h4>
+                    <div class="header">
+                        <h2 class="truncate"><?= $model->name ?></h2>
+                    </div>
+                    <div class="body">
                         <div class="panel-description">
                             <?= $model->description ?>
                         </div>

@@ -15,7 +15,7 @@ $this->title = $model->name;
             <div class="card text-center">
                 <div class="body">
                     <?= $model->description ?>
-                    <small>Managed by <i class="fa fa-user"></i> <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?></small>
+                    <small>Managed by <i class="fa fa-user"></i> <?= Html::a($model->user->profile->name ? Html::encode($model->user->profile->name) : Html::encode($model->user->username), ['/u/' . $model->user->username]) ?></small>
                 </div>
             </div>
         </div>

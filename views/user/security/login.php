@@ -48,7 +48,7 @@ $this->title = Yii::t('user', 'Log In');
 
                 <?= $form->field($model, 'rememberMe', ['checkboxTemplate' => '<div class="checkbox">{input}{beginLabel}{labelTitle}{endLabel}</div>'])->checkbox(['tabindex' => '4']) ?>
                 
-                <?= Html::submitButton(Yii::t('user', 'Sign in'), ['class' => 'btn btn-primary btn-block', 'tabindex' => '3']) ?>
+                <?= Html::submitButton(Yii::t('user', 'Sign in'), ['class' => 'btn btn-primary btn-block waves-effect', 'tabindex' => '3']) ?>
 
                 <?php ActiveForm::end() ?>
 
@@ -57,7 +57,7 @@ $this->title = Yii::t('user', 'Log In');
                 </h5>
 
                 <div class="p-b-10 p-l-10 p-r-10">
-                    <?= Html::a(Html::img('@web/uploads/images/sign-in-with-sso-ui.png', ['class' => 'img-responsive']), ['login-sso-ui']) ?>
+                    <?= Html::a(Html::img('@web/themes/default/images/sign-in-with-sso-ui.png', ['class' => 'img-responsive']), ['login-sso-ui']) ?>
                 </div>
 
             </div>

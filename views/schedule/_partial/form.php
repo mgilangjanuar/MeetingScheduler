@@ -39,7 +39,7 @@ use vova07\imperavi\Widget as Imperavi;
         </div>
 
         
-        <?= Html::submitButton('SAVE', ['class' => 'btn btn-primary btn-block']) ?>
+        <?= Html::submitButton('SAVE', ['class' => 'btn btn-primary btn-block waves-effect']) ?>
 
         <?php ActiveForm::end() ?>
     </div>

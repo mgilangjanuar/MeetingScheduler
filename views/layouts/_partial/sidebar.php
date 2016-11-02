@@ -15,8 +15,8 @@ $user = Yii::$app->user->identity;
                     ]) ?>
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $user->profile->name ? $user->profile->name : $user->username ?></div>
-                    <div class="email"><?= $user->email ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?= $user->profile->name ? Html::encode($user->profile->name) : Html::encode($user->username) ?></div>
+                    <div class="email"><?= Html::encode($user->email) ?></div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -64,10 +64,10 @@ $user = Yii::$app->user->identity;
         </div>
         <div class="legal">
             <div class="copyright">
-                Copyright &copy; <?= Html::a(Yii::$app->name, Yii::$app->homeUrl) ?> <?= date('Y') ?>. All rights reserved.
+                Copyright &copy; <?= Html::a(Yii::$app->name, Yii::$app->homeUrl) ?> <?= date('Y') ?>.
             </div>
             <div class="version">
-                Fork on <a href="https://github.com/mgilangjanuar/MeetingScheduler"><i class="fa fa-github"></i> GitHub</a>
+                <a href="https://github.com/mgilangjanuar/MeetingScheduler"><i class="fa fa-github"></i> GitHub</a>
             </div>
         </div>
     </aside>

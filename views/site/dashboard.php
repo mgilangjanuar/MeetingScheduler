@@ -23,9 +23,9 @@ $this->title = 'Dashboard';
                             <?= Html::a($model->event->name, ['/!/' . $model->event->slug], ['class' => 'not-style']) ?>
                             <small>
                                 <?php if ($model->user_id != Yii::$app->user->id): ?>
-                                    <i class="fa fa-user"></i> meet with <?= Html::a($model->user->profile->name ? $model->user->profile->name : $model->user->username, ['/u/' . $model->user->username]) ?>
+                                    <i class="fa fa-user"></i> meet with <?= Html::a($model->user->profile->name ? Html::encode($model->user->profile->name) : Html::encode($model->user->username), ['/u/' . $model->user->username]) ?>
                                 <?php else: ?>
-                                    <i class="fa fa-user"></i> meet with <?= Html::a($model->event->user->profile->name ? $model->event->user->profile->name : $model->event->user->username, ['/u/' . $model->event->user->username]) ?>
+                                    <i class="fa fa-user"></i> meet with <?= Html::a($model->event->user->profile->name ? Html::encode($model->event->user->profile->name) : Html::encode($model->event->user->username), ['/u/' . $model->event->user->username]) ?>
                                 <?php endif ?>
                             </small>
                         </h2>

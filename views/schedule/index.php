@@ -22,7 +22,7 @@ $this->title = 'Schedules';
                         <h2 class="truncate">
                             <?= Html::a($model->event->name, ['/!/' . $model->event->slug], ['class' => 'not-style']) ?>
                             <small>
-                                <i class="fa fa-user"></i> meet with <?= Html::a($model->event->user->profile->name ? $model->event->user->profile->name : $model->event->user->username, ['/u/' . $model->event->user->username]) ?>
+                                <i class="fa fa-user"></i> meet with <?= Html::a($model->event->user->profile->name ? Html::encode($model->event->user->profile->name) : Html::encode($model->event->user->username), ['/u/' . $model->event->user->username]) ?>
                             </small>
                         </h2>
                         <ul class="header-dropdown m-r--5">
@@ -32,10 +32,11 @@ $this->title = 'Schedules';
                                 </a>
                                 <ul class="dropdown-menu pull-right">
                                     <li>
-                                        <?= Html::a('<i class="fa fa-refresh"></i> Reschedule', ['/!/' . $model->event->slug]) ?>
+                                        <?= Html::a('<i class="material-icons">restore</i> Reschedule', ['/!/' . $model->event->slug]) ?>
                                     </li>
+                                    <li class="divider"></li>
                                     <li>
-                                        <?= Html::a('<i class="fa fa-trash"></i> Delete Schedule', ['/book/delete', 'id' => $model->id], [
+                                        <?= Html::a('<i class="material-icons">delete</i> Delete', ['/book/delete', 'id' => $model->id], [
                                             'data' => [
                                                 'method' => 'post',
                                                 'confirm' => 'Are you sure?',

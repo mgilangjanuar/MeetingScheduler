@@ -44,7 +44,7 @@ $this->title = Yii::t('user', 'Sign Up');
                     <?= $form->field($model, 'password', ['inputTemplate' => '<div class="form-line">{input}</div>'])->passwordInput() ?>
                 <?php endif ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-primary btn-block btn-raised']) ?>
+                <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-primary btn-block waves-effect']) ?>
 
                 <?php ActiveForm::end(); ?>
 
@@ -53,7 +53,7 @@ $this->title = Yii::t('user', 'Sign Up');
                 </h5>
                 
                 <div class="p-b-10 p-l-10 p-r-10">
-                    <?= Html::a(Html::img('@web/uploads/images/sign-in-with-sso-ui.png', ['class' => 'img-responsive']), ['login-sso-ui']) ?>
+                    <?= Html::a(Html::img('@web/themes/default/images/sign-in-with-sso-ui.png', ['class' => 'img-responsive']), ['login-sso-ui']) ?>
                 </div>
             </div>
         </div>

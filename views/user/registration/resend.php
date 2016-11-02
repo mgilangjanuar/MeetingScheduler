@@ -36,7 +36,7 @@ $this->title = Yii::t('user', 'Request Confirmation Message');
 
                 <?= $form->field($model, 'email', ['inputTemplate' => '<div class="form-line">{input}</div>'])->textInput(['autofocus' => true]) ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-primary btn-block']) ?><br>
+                <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-primary btn-block waves-effect']) ?><br>
 
                 <?php ActiveForm::end() ?>
                 

@@ -38,7 +38,7 @@ $this->title = Yii::t('user', 'Reset Your Password');
 
                 <?= $form->field($model, 'password', ['inputTemplate' => '<div class="form-line">{input}</div>'])->passwordInput() ?>
 
-                <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-success btn-block']) ?><br>
+                <?= Html::submitButton(Yii::t('user', 'Finish'), ['class' => 'btn btn-success btn-block waves-effect']) ?><br>
 
                 <?php ActiveForm::end() ?>
             </div>

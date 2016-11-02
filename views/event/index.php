@@ -20,26 +20,37 @@ $this->title = 'Events';
             <div class="col-sm-6 col-md-4">
                 <div class="card">
                     <div class="header">
-                        <h2 class="truncate"><?= $model->name ?></h2>
+                        <h2 class="truncate small"><?= $model->name ?></h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li>
+                                        <?= Html::a('<i class="material-icons">remove_red_eye</i> View', ['/event/view', 'id' => $model->id], ['class' => 'text-info']) ?>
+                                    </li>
+                                    <li>
+                                        <?= Html::a('<i class="material-icons">mode_edit</i> Update', ['/event/update', 'id' => $model->id], ['class' => 'text-warning']) ?>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <?= Html::a('<i class="material-icons">delete</i> Delete', ['/event/delete', 'id' => $model->id], [
+                                            'data' => [
+                                                'confirm' => 'Are you sure?',
+                                                'method' => 'post'
+                                            ]
+                                        ]) ?>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                     <div class="body">
                         <div class="panel-description">
                             <?= $model->description ?>
                         </div>
                         <small class="text-muted"><i class="fa fa-clock-o"></i> <?= $model->createdAtPretty ?></small>
-                    </div>
-                    <div class="card-overlay">
-                        <div class="card-button-action">
-                            <?= Html::a('<i class="material-icons">remove_red_eye</i>', ['/event/view', 'id' => $model->id], ['class' => 'text-info']) ?>
-                            <?= Html::a('<i class="material-icons">mode_edit</i>', ['/event/update', 'id' => $model->id], ['class' => 'text-warning']) ?>
-                            <?= Html::a('<i class="material-icons">delete</i>', ['/event/delete', 'id' => $model->id], [
-                                'class' => 'text-danger',
-                                'data' => [
-                                    'confirm' => 'Are you sure?',
-                                    'method' => 'post'
-                                ]
-                            ]) ?>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -50,16 +61,3 @@ $this->title = 'Events';
         <?= Html::a('<i class="material-icons">add</i>', ['/event/create'], ['class' => 'btn btn-primary btn-circle-lg waves-effect waves-circle waves-float btn-float']) ?>
     </div>
 </div>
-
-<?php $this->registerJs(<<<Js
-    $('.card').hover(function ()
-    {
-        $(this).addClass('blur')
-        $(this).find('.card-overlay').addClass('show')
-    }, function ()
-    {
-        $(this).removeClass('blur')
-        $(this).find('.card-overlay').removeClass('show')
-    })
-Js
-) ?>

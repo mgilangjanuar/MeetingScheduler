@@ -5,7 +5,7 @@ $baseUrl = str_replace('/web', '', (new \yii\web\Request)->getBaseUrl());
 
 $config = [
     'id' => 'basic',
-    'name' => 'Janjian',
+    'name' => 'MeetApp',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'modules' => [

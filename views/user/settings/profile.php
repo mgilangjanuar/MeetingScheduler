@@ -77,7 +77,7 @@ $this->title = Yii::t('user', 'Profile Settings');
                     <div class="col-lg-offset-3 col-lg-9">
                         <?= \yii\helpers\Html::submitButton(
                             Yii::t('user', 'Save'),
-                            ['class' => 'btn btn-block btn-success']
+                            ['class' => 'btn btn-block btn-success waves-effect']
                         ) ?><br>
                     </div>
                 </div>

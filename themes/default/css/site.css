@@ -294,7 +294,11 @@ legend {
     right: 20px;
 }
 
-.card.blur > .panel-body {
+.card.blur > .header {
+    opacity: 0.2;
+}
+
+.card.blur > .body {
     opacity: 0.2;
 }
 
@@ -305,7 +309,7 @@ legend {
 .card-overlay.show {
     position: absolute;
     left: 50%;
-    top: 60px;
+    top: 70px;
 }
 
 .card-overlay.show .card-button-action {
@@ -330,6 +334,10 @@ legend {
     z-index: 9;
 }
 
+.card .header .header-dropdown .dropdown-menu li a > i {
+    color: #666 !important;
+}
+
 .card .header h2 a {
     color: #fff;
 }
@@ -338,9 +346,64 @@ legend {
     font-size: 22px;
 }
 
+.card .header h2.small {
+    font-size: 18px;
+}
+
 .card .header h2 small a {
     color: #fff;
     text-decoration: underline;
     font-weight: normal;
 }
 
+.site-index .middle {
+    display: table;
+    width: 100%;
+}
+
+.site-index .middle .body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.site-index .section {
+    height: 100vh;
+    margin-right: -30px;
+    margin-left: -30px;
+    padding: 30px;
+}
+
+.site-index .section.section-1 {
+    margin-top: -60px;
+    height: 300px;
+    background-color: #2196F3;
+    color: #fff;
+}
+
+.site-index .section.section-1 .app-name {
+    font-size: 48px;
+}
+
+.site-index .section.section-1 .middle {
+    height: 250px;
+}
+
+.site-index .section.section-2 {
+    height: auto;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.site-index .section.section-3 {
+    height: 400px;
+    background-image: url('../images/user-profile-bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.site-index .section.section-3 .middle {
+    height: 300px;
+}

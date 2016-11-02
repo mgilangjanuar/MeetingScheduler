@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\Event;
 use app\models\Schedule;
 use yii\db\Query;
+use yii\helpers\Url;
 
 class SiteController extends Controller
 {

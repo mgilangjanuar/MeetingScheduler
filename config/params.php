@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'adminEmail' => 'bot@janjian.ga',
+    'adminEmail' => 'bot@meetapp.cf',
 ];

@@ -23,7 +23,7 @@ use vova07\imperavi\Widget as Imperavi;
             </div>
         </div>
 
-        <?= $form->field($model, 'slug', ['inputTemplate' => '<div class="input-group"><span class="input-group-addon">janjian.ga/!/</span><div class="form-line">{input}</div></div>'])->label(false) ?>
+        <?= $form->field($model, 'slug', ['inputTemplate' => '<div class="input-group"><span class="input-group-addon">meetapp.cf/!/</span><div class="form-line">{input}</div></div>'])->label(false) ?>
 
         <?= $form->field($model, 'description', ['options' => ['class' => '']])->widget(Imperavi::className(), [
             'settings' => [
